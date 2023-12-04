@@ -37,6 +37,10 @@ message BeanProto {
   optional bool shared = 26;
   optional ICupping cupping = 27;
   optional IFlavor cupped_flavor = 28;
+
+  optional boolean frozen = 29;
+  optional string frozenDate = 30;
+  optional number daysFrozen = 31;
 }
 
 message Config {

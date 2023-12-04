@@ -13,6 +13,7 @@ import { ManageBrewParameter } from '../parameter/manageBrewParameter';
 import { IBeanPageSort } from '../../interfaces/bean/iBeanPageSort';
 import { BEAN_SORT_AFTER } from '../../enums/beans/beanSortAfter';
 import { BEAN_SORT_ORDER } from '../../enums/beans/beanSortOrder';
+import { BEAN_FROZEN_FILTERS } from '../../enums/beans/beanFrozen';
 import { ListViewBrewParameter } from '../parameter/listViewBrewParameter';
 import { IBeanPageFilter } from '../../interfaces/bean/iBeanPageFilter';
 
@@ -136,6 +137,7 @@ export class Settings implements ISettings {
     const upperRating: number = this.bean_rating;
     return {
       favourite: false,
+      include_frozen: true,
       rating: {
         upper: upperRating,
         lower: 0,

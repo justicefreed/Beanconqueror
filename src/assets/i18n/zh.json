@@ -1537,6 +1537,7 @@
     "PREPARATION_DEVICE_CONNECTION": "冲泡设备已连接",
     "MANUAL_EXPORT_TO_VISUALIZER": "导出到可视化工具",
     "ONLY_FAVOURITES": "仅收藏",
+    "INCLUDE_FROZEN": "包括冷冻",
     "TEMPERATURE": {
         "CONNECTION_NOT_ESTABLISHED": "温度设备未找到或无法建立连接",
         "CONNECTED_SUCCESSFULLY": "温度设备已连接",

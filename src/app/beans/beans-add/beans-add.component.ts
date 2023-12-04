@@ -157,6 +157,10 @@ export class BeansAddComponent implements OnInit {
     );
     this.data.cupping_points = _bean.cupping_points;
     this.data.roast_range = _bean.roast_range;
+    
+    this.data.adjustedRoastingDate = _bean.adjustedRoastingDate;
+    this.data.frozenDate = _bean.frozenDate;
+    this.data.frozen = _bean.frozen;
 
     const copyAttachments = [];
     for (const attachment of _bean.attachments) {

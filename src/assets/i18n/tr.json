@@ -1537,6 +1537,7 @@
     "PREPARATION_DEVICE_CONNECTION": "Cihaz bağlantısı",
     "MANUAL_EXPORT_TO_VISUALIZER": "Görselleştiriciye manuel aktarım",
     "ONLY_FAVOURITES": "Sadece favoriler",
+    "INCLUDE_FROZEN": "Dondurulmuşları Dahil Et",
     "TEMPERATURE": {
         "CONNECTION_NOT_ESTABLISHED": "Termometre bulunamadı veya bağlantı kurulamadı",
         "CONNECTED_SUCCESSFULLY": "Termometre bağlandı",

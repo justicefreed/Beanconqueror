@@ -32,6 +32,9 @@ export class BeanMapper {
         if ( _userSharedBean.roastingDate !== null &&  _userSharedBean.roastingDate !== ''){
           newBean.roastingDate = _userSharedBean.roastingDate;
         }
+        newBean.frozen = _userSharedBean.frozen;
+        newBean.daysFrozen = _userSharedBean.daysFrozen;
+        newBean.frozenDate = _userSharedBean.frozenDate;
         newBean.url = _userSharedBean.url;
 
         newBean.beanMix =  _userSharedBean.beanMix;
@@ -93,6 +96,9 @@ export class BeanMapper {
         if ( _serverResponse.roastingDate !== null &&  _serverResponse.roastingDate !== ''){
           newBean.roastingDate = _serverResponse.roastingDate;
         }
+        newBean.frozen = _serverResponse.frozen;
+        newBean.daysFrozen = _serverResponse.daysFrozen;
+        newBean.frozenDate = _serverResponse.frozenDate;
         newBean.url = _serverResponse.url;
 
         newBean.beanMix = {

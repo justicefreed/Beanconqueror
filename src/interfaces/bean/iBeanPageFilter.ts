@@ -3,6 +3,7 @@ import { BEAN_ROASTING_TYPE_ENUM } from '../../enums/beans/beanRoastingType';
 export interface IBeanPageFilter {
   // Properties
   favourite: boolean;
+  include_frozen: boolean;
   rating: {
     upper: number;
     lower: number;

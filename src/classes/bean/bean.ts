@@ -56,6 +56,10 @@ export class Bean implements IBean {
   public cupping: ICupping;
 
   public cupped_flavor: IFlavor;
+  
+  public frozen: boolean;
+  public frozenDate: string;
+  public daysFrozen: number;
 
   constructor() {
     this.name = '';
@@ -106,6 +110,10 @@ export class Bean implements IBean {
       predefined_flavors: {},
       custom_flavors: [],
     } as IFlavor;
+    
+    this.frozen = false;
+    this.frozenDate = '';
+    this.daysFrozen = 0;
   }
 
   public getRoastName(): string {
@@ -187,18 +195,42 @@ export class Bean implements IBean {
 
     return fixNeeded;
   }
-  public beanAgeInDays(): number {
-    if (
-      this.roastingDate !== null &&
-      this.roastingDate !== undefined &&
-      this.roastingDate !== ''
-    ) {
-      const today = moment(Date.now()).startOf('day');
-      const roastingDate = moment(this.roastingDate).startOf('day');
 
-      return today.diff(roastingDate, 'days');
+  /**
+   * Get the ISO Datetime string for new frozen date as now
+   * Doing this here to keep time calcs in this file
+   */
+  public getNewFrozenDate(): string {
+      return moment(Date.now()).toISOString();
+  }
+
+  /**
+   * Get the ISO Datetime string for new adjusted roasting date
+   * or '' if no valid calculable date
+   */
+  public getNewDaysFrozen(): number {
+      const today = moment(Date.now()).startOf('day');
+      const frozenDate = moment(this.frozenDate).startOf('day');
+      return this.daysFrozen + today.diff(frozenDate, 'days');
+  }
+
+  public beanAgeInDays(): number {
+    if (Boolean(this.roastingDate) == false) {
+        return 0;
     }
-    return 0;
+    const roastingDate = moment(this.roastingDate).startOf('day');
+    let asOfDate = moment(Date.now()).startOf('day');
+    if (this.frozen && Boolean(this.frozenDate)) {
+      // if currently frozen, use the frozen date instead of today
+      asOfDate = moment(this.frozenDate).startOf('day');
+    }
+    const daysSinceRoast = asOfDate.diff(roastingDate, 'days')
+    const ageDays = daysSinceRoast - this.daysFrozen;
+    if (ageDays < 0) {
+      // handle edge case where roasting date manually changed fwd after beans unfrozen
+      return 0;
+    }
+    return ageDays
   }
 
   /**

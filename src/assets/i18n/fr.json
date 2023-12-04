@@ -1518,6 +1518,7 @@
     "PREPARATION_DEVICE_CONNECTION": "Connexion de l'appareil",
     "MANUAL_EXPORT_TO_VISUALIZER": "Exporter vers Visualizer",
     "ONLY_FAVOURITES": "Seulement les favoris",
+    "INCLUDE_FROZEN": "Inclure congelé",
     "TEMPERATURE": {
         "CONNECTION_NOT_ESTABLISHED": "Appareil de température introuvable, ou la connexion n'a pas pu être établie",
         "CONNECTED_SUCCESSFULLY": "Appareil de température connecté",

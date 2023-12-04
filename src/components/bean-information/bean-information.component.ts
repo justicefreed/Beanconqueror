@@ -202,6 +202,9 @@ export class BeanInformationComponent implements OnInit {
       case BEAN_ACTION.TOGGLE_FAVOURITE:
         await this.toggleFavourite();
         break;
+      case BEAN_ACTION.TOGGLE_FROZEN:
+        await this.toggleFreezer();
+        break;
       case BEAN_ACTION.SHARE:
         await this.shareBean();
         break;
@@ -259,6 +262,22 @@ export class BeanInformationComponent implements OnInit {
       );
       this.bean.favourite = false;
       this.uiToast.showInfoToast('TOAST_BEAN_FAVOURITE_REMOVED');
+    }
+    await this.uiBeanStorage.update(this.bean);
+  }
+
+  public async toggleFreezer() {
+    this.uiAnalytics.trackEvent(
+      BEAN_TRACKING.TITLE,
+      BEAN_TRACKING.ACTIONS.TOGGLE_FROZEN
+    );
+    if (!this.bean.frozenDate) {
+      this.bean.frozenDate = this.bean.getNewFrozenDate();
+      this.uiToast.showInfoToast('TOAST_BEAN_FREEZER_ADDED');
+    } else {
+      this.bean.daysFrozen = this.bean.getNewDaysFrozen();
+      this.bean.frozenDate = '';
+      this.uiToast.showInfoToast('TOAST_BEAN_FREEZER_REMOVED');
     }
     await this.uiBeanStorage.update(this.bean);
   }

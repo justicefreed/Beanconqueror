@@ -16,6 +16,9 @@ export class ServerBean
   public decaffeinated: boolean;
   public url: string;
   public ean_article_number: string;
+  public frozen: boolean;
+  public frozenDate: string;
+  public daysFrozen: number;
   public bean_information: Array<
       {
         country: string,

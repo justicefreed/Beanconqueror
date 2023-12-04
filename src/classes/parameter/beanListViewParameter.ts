@@ -22,6 +22,8 @@ export class BeanListViewParameter implements IBeanParameter {
 
   public bean_roasting_type: boolean;
 
+  public frozen: boolean;
+
   public bean_information: boolean;
   public country: boolean;
   public region: boolean;
@@ -56,6 +58,7 @@ export class BeanListViewParameter implements IBeanParameter {
     this.decaffeinated = false;
     this.bean_roasting_type = true;
     this.rating = true;
+    this.frozen = false;
 
     this.bean_information = false;
     this.country = false;
@@ -91,6 +94,7 @@ export class BeanListViewParameter implements IBeanParameter {
     this.decaffeinated = true;
     this.bean_roasting_type = true;
     this.rating = true;
+    this.frozen = true;
 
     this.bean_information = true;
     this.country = true;

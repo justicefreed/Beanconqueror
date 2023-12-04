@@ -1537,6 +1537,7 @@
     "PREPARATION_DEVICE_CONNECTION": "Device connection",
     "MANUAL_EXPORT_TO_VISUALIZER": "Export to Visualizer",
     "ONLY_FAVOURITES": "Only favorites",
+    "INCLUDE_FROZEN": "Include frozen",
     "TEMPERATURE": {
         "CONNECTION_NOT_ESTABLISHED": "Temperature device not found, or connection could not be established",
         "CONNECTED_SUCCESSFULLY": "Temperature device connected",
